@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Reformando</title>
+    <meta charset="utf-8">
+    <meta name="author" title="Inopus">
+    <link rel="author" href="http://inopus.com.br" title="inopus">
+    <meta name="description" content="reformando">
+    <meta name="keywords" content="reformando,app,obra">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="im/logo/logo128.png">
+    <link rel="icon" href="im/logo/logo128.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="css/Carregando.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/Alerta.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+
+    <link type="text/css" rel="stylesheet" href="css/frameworks/materialize.min.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/frameworks/croppie.min.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/frameworks/sweetalert.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/frameworks/bootstrap-material-datetimepicker.css" media="all" />
+    <link href="css/materialdesignicons/materialdesignicons.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/Alerta.js"></script>
+    <script src="js/Pagina.js"></script>
+    <script src="js/Carregando.js"></script>
+    <script src="js/HttpReq.js"></script>
+    <script src="js/funcionalidadesDisponiveis.js"></script>
+
+    <script src="js/model/Usuario.js"></script>
+    <script src="js/model/Token.js"></script>
+    <script src="js/model/Obra.js"></script>
+    <script src="js/model/RelacaoObra.js"></script>
+
+    <script src="js/library/Valida.js"></script>
+    <script src="js/library/InChat.js"></script>
+
+    <script src="js/paginas/PagInicial.js"></script>
+    <script src="js/paginas/PagCadastroGeral.js"></script>
+    <script src="js/paginas/PagCadastroParceiro.js"></script>
+    <script src="js/paginas/PagEscolhePerfil.js"></script>
+    <script src="js/paginas/PagMain.js"></script>
+    <script src="js/paginas/PagParceiro.js"></script>
+    <script src="js/paginas/PagLogin.js"></script>
+    <script src="js/paginas/PagLogin2.js"></script>
+    <script src="js/paginas/PagObra.js"></script>
+    <script src="js/paginas/PagAddObra.js"></script>
+    <script src="js/paginas/PagEscolheParceiro.js"></script>
+    <script src="js/paginas/PagChat.js"></script>
+
+    <script type="text/javascript" src="js/frameworks/jquery.min.js"></script>
+    <script type="text/javascript" src="js/frameworks/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/frameworks/materialize.min.js"></script>
+    <script type="text/javascript" src="js/frameworks/moment.js"></script>
+
+    <script type="text/javascript" src="js/frameworks/bootstrap-material-datetimepicker.js"></script>
+
+
+    <script src="js/Banco.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/library/sha512.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="status">
+    </div>
+
+
+    <header>
+        <nav id="navHeader" class="teal">
+            <div class="nav-wrapper">
+                <div class="divLogo">
+                    <a id="tituloHeader" class="brand-logo center logo pointer" onclick="pagina.abrirPaginas('main')"><img class="responsive-img" src="images/logo.png" style="height: 1.5em;margin-top: 0.15em;" />
+                    </a>
+                </div>
+                <ul id="slide-out" class="side-nav">
+                    <li>
+                        <a class="row centralizacaoVertical" onclick="$('.button-collapse').sideNav('hide');pagina.abrirPaginas('main');">
+                                Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="row centralizacaoVertical" onclick="$('.button-collapse').sideNav('hide');pagina.abrirPaginas('cadastroGeral');">
+                                Editar Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="row centralizacaoVertical" onclick="$('.button-collapse').sideNav('hide'); $('#modalSobre').openModal();">
+                                Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="row centralizacaoVertical" onclick="$('.button-collapse').sideNav('hide');localStorage.removeItem('token');
+            localStorage.removeItem('usuario');pagina.abrirPaginas('login');">        
+                                Sair
+                        </a>
+                    </li>
+                </ul>
+                <a id="btnarrow-left-bold" data-activates="slide-out" class="button-collapse show-on-large right pointer"><i class="mdi mdi-menu"></i></a>
+                <a id="btnVoltar" class="left pointer" onclick="pagina.abrirPaginas('main');"><i class="mdi mdi-arrow-left"></i></a>
+            </div>
+        </nav>
+    </header>
+    <div id="pagina"></div>
+    <!-- Modal Sobre -->
+    <div id="modalSobre" class="modal modal-fixed-footer modalFull">
+        <div class="modal-content">
+            <div class="row center">
+                <p class="tituloEquipe">Equipe</p>
+            </div>
+            <div class="row center">
+                <div class="col s12">
+                    <div class="row center">
+                        <div class="col s6">
+                            <img class="circle responsive-img img" src="images/equipe/bruno.jpg" />
+                        </div>
+                        <div class="col s6">
+                            <img class="circle responsive-img img" src="images/equipe/victor.jpg" />
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="col s6">
+                            <p class="tituloNomeDesenvolvedor">Bruno Faccio</p>
+                            <p class="funcaoDesenvolvedor"><i>Consultor de Negócios</i></p>
+                        </div>
+                        <div class="col s6">
+                            <p class="tituloNomeDesenvolvedor">Victor Esteves</p>
+                            <p class="funcaoDesenvolvedor"><i>Consultor de Negócios</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row center">
+                <div class="col s12">
+                    <a href="http://inopus.com.br" target="_blank"><img class="circle responsive-img imgEmpresa" style="border-radius:0" src="images/equipe/inopusLogo.png" /></a>
+                    <p><i>Empresa de desenvolvimento</i></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green blue-text btn-flat" onclick="$('#modalSobre').closeModal();">Fechar</a>
+        </div>
+    </div>
+    <!-- Fim Modal Sobre -->
+
+    <!-- Modal Editar Imagem -->
+    <div id="modalEditarImg" class="modal modal-fixed-footer modalFull">
+        <div class="modal-content">
+            <div class="row">
+                <span id="cropedImage" style="display:none"></span>
+                <div class="croppie-container" id="vanilla-demo"></div>
+                <div class="col s12 center actions">
+                    <button id="rotateLeft" class="vanilla-rotate btn" data-deg="-90"><i class="mdi mdi-rotate-left"></i></button>
+                    <button id="rotateRight" class="vanilla-rotate btn" data-deg="90"><i class="mdi mdi-rotate-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a onclick="$('#modalSobre').closeModal();" class=" modal-action modal-close waves-effect waves-green red-text btn-flat left">Fechar</a>
+            <a class="modal-action modal-close waves-effect waves-green green-text btn-flat right" onclick="cropImage(document.getElementById('cropedImage').textContent);$('#modalSobre').closeModal();">Salvar</a>
+
+        </div>
+    </div>
+    <!-- Fim Editar Imagem -->
+
+    <!-- Modal Orçamento -->
+    <div id="modalOrcamento" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h5>Orçamento</h5>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="orcamentoInput" type="text" class="validate">
+                    <label for="orcamentoInput">Insira o valor em reais</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-light green-text btn-flat " onclick="pag.mostraOrcamento();">Enviar</a>
+            <a onclick="$('#modalMostraOrcamento').openModal();" class="modal-action modal-close waves-effect waves-light blue-text btn-flat ">Fechar</a>
+        </div>
+    </div>
+    <!--Fim Modal Orçamento -->
+
+    <!-- Modal Mostra Orçamento -->
+    <div id="modalMostraOrcamento" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h5>Orçamento</h5>
+            <p>O orçamento apresentado pelo prestador é:</p>
+            <span id="textoOrcamento" class="center" style="font-size:1.2em"></span>
+
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-light green-text btn-flat " onclick="pag.respostaOrcamento(1);">Aceitar</a>
+            <a class="modal-action modal-close waves-effect waves-light red-text btn-flat" onclick="pag.respostaOrcamento(0);$('#modalMostraOrcamento').openModal();">Recusar</a>
+        </div>
+    </div>
+    <!--Fim Modal Mostra Orçamento -->
+
+    <div id="modalContainer"></div>
+    <script src="js/frameworks/rating.js"></script>
+    <script src="js/frameworks/croppie.js"></script>
+
+    <script>
+        var vanilla;
+        cropEditor(150, 150, 'circle', "img/pizza.png");
+        document.getElementById("rotateLeft").addEventListener("click", function () {
+            vanilla.rotate(90);
+        });
+        document.getElementById("rotateRight").addEventListener("click", function () {
+            vanilla.rotate(90);
+
+        });
+    </script>
+</body>
+
+</html>

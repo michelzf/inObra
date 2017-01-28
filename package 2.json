@@ -1,0 +1,33 @@
+{
+    "name": "ReformandoApp-Inopus",
+    "version": "4.0.0",
+    "description": "Reformando App - Inopus",
+    "keywords": [
+    "Reformando",
+    "App",
+    "Inopus"
+  ],
+    "author": {
+        "name": "Inopus",
+        "email": "contato@inopus.com.br",
+        "url": "http://inopus.com.br/"
+    },
+    "homepage": "http://inopus.com.br/",
+    "engines": {
+        "node": "*",
+        "npm": "*"
+    },
+    "dependencies": {
+        "express": "*",
+        "node-uuid": "*",
+        "nodemailer": "*",
+        "formidable": "*",
+        "ws": "*",
+        "crypto": "*",
+        "fs-extra": "*"
+    },
+    "devDependencies": {},
+    "bundleDependencies": [],
+    "private": true,
+    "main": "server.js"
+}

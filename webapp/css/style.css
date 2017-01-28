@@ -1,0 +1,304 @@
+/* fallback */
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/material-design-icons/materialdesignicons-webfont.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin-top: 4em;
+}
+
+.btn-xl {
+    width: 100% !important;
+}
+
+.container-big {
+    height: 8em !important;
+}
+
+.container-small {
+    height: 5em !important;
+}
+
+.row {
+    margin-bottom: 0.6em !important;
+}
+
+.rowCover {
+    margin: 0em !important;
+}
+
+.parallax img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.centralizacaoVertical {
+    display: flex;
+    -webkit-display: flex;
+    -os-display: flex;
+    -ms-display: flex;
+    align-items: center;
+}
+
+#navHeader {
+    position: fixed;
+    z-index: 999;
+}
+
+.tabs .indicator {
+    background-color: #009688 !important;
+}
+
+.picker__month-display {
+    font-size: 1.4rem !important;
+}
+
+.picker__year-display {
+    font-size: 1.2rem !important;
+}
+
+
+/*Date*/
+
+.picker__date-display {
+    padding-bottom: 0 !important;
+}
+
+.picker__day-display {
+    font-size: 3.5rem !important;
+}
+
+.picker__weekday-display {
+    padding: 5px !important;
+    margin-bottom: 0em !important;
+}
+
+.select-wrapper {
+    margin-top: 0.5em !important;
+}
+
+#imgPerfil {
+    border-radius: 13em;
+}
+
+#imgPerfil #img {
+    border-radius: 13em;
+    width: 6em;
+    height: 6em;
+    margin-top: 0.8em;
+    z-index: 2;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.16), 0 3px 2px rgba(0, 0, 0, 0.23);
+}
+
+#imgPerfil .image-upload > input {
+    display: none;
+}
+
+#legendaFoto {
+    font-size: 0.8em;
+    color: #333333;
+    margin: 0em 5em;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.modalFull {
+    max-height: 96% !important;
+    height: 96% !important;
+    width: 94% !important;
+    top: 2% !important;
+}
+
+.modalFull p {
+    margin: 0.1em !important;
+}
+
+.img {
+    width: 5em;
+}
+
+.textoMensagem {
+    border-radius: 1em;
+}
+
+.horaMensagem {
+    margin: 0.2em 0;
+    font-size: 0.8em;
+}
+
+.tabs .tab a {
+    color: #009688 !important;
+}
+
+.tabs .tab a:hover {
+    color: #00bfa5 !important;
+}
+
+.input-field label {
+    font-size: 1.1em;
+}
+
+.side-nav.right-aligned {
+    right: 0em !important;
+}
+
+#sidenav-overlay {
+    z-index: 0 !important;
+}
+
+.collection .collection-item {
+    padding: 0px 0px !important;
+    line-height: 0 !important;
+}
+
+.collection .collection-item.avatar {
+    min-height: 0 !important;
+}
+
+.parallax img {
+    background-position: center !important;
+    -webkit-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+}
+
+.mdiMedium {
+    font-size: 1.5em !important;
+}
+
+.mdiLarge {
+    font-size: 2em !important;
+}
+
+
+/* Rating */
+
+.rating {
+    display: none;
+    font-size: 44px;
+    font-weight: bold;
+    color: #3af;
+    white-space: nowrap;
+}
+
+.rating .star {
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.05em;
+}
+
+.rating .star::before {
+    display: inline-block;
+    color: #aaa;
+    content: url(../images/capaceteOff.png);
+    width: 1em;
+    height: 1em;
+}
+
+.rating .star::after {
+    display: inline-block;
+    position: absolute;
+    content: url(../images/capaceteOn.png);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: all 0.1s linear;
+    overflow: hidden;
+}
+
+.rating:not([disabled]) .star:hover::after,
+.rating .star.active::after {
+    opacity: 1;
+    width: 1em;
+    height: 1em;
+}
+
+.rating .star.active.half::after {
+    width: 0.5em;
+}
+
+.tituloNomeDesenvolvedor {
+    font-size: 0.8em;
+}
+
+.funcaoDesenvolvedor {
+    font-size: 0.7em;
+}
+
+footer {
+    width: 100%;
+    flex: none;
+    z-index: 0;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+}
+
+.tabs .tab {
+    letter-spacing: 0em !important;
+}
+
+.imgEmpresa {
+    width: 10em;
+}
+
+.imgEquipe {
+    width: 5em;
+}
+
+.tituloEquipe {
+    font-size: 1.3em;
+}
+
+.modal {
+    z-index: 999;
+}
