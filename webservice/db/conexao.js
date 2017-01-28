@@ -5,7 +5,7 @@ dbCon = new Array();
 module.exports = function () {
     console.log(process.env.OPENSHIFT_MONGODB_DB_URL);
     console.log(process.env.OPENSHIFT_APP_NAME);
-    require('mongodb').MongoClient.connect("mongodb://admin:DK3gm0Porcj3D6u0@mongodb:27017/reformandoapp", function (err, conn) {
+    require('mongodb').MongoClient.connect("mongodb://userHT1:ned2jalngE4KQswM@mongodb:27017/reformandoapp", function (err, conn) {
         //mongodb://USUARIO:SENHA@URL:PORTA
         //    require('mongodb').MongoClient.connect("mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT", function (err, conn) {
         if (err) {
