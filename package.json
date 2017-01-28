@@ -14,6 +14,7 @@
         "formidable": "*",
         "ws": "*",
         "crypto": "*",
+        "mongodb": "*",
         "fs-extra": "*"
     },
     "devDependencies": {
